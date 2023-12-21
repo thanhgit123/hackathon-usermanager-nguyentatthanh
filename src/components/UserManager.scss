@@ -1,0 +1,73 @@
+$input-container-bg: #fff;
+$input-container-shadow: 20px 20px 30px rgba(0, 0, 0, 0.05);
+$input-container-border-color: rgb(176, 190, 197);
+$input-container-input-bg: transparent;
+$input-container-input-color: rgb(69, 90, 100);
+$input-container-input-focus-color: rgb(80, 146, 212);
+$invite-btn-bg: rgb(35, 185, 43);
+$invite-btn-hover-bg: rgb(66, 172, 217);
+
+.input-container {
+  position: relative;
+  display: flex;
+  height: 2.8rem;
+  width: 100%;
+  min-width: 200px;
+  max-width: 420px;
+  background-color: $input-container-bg;
+  border-radius: 8px;
+  box-shadow: $input-container-shadow;
+  margin-left: 40px;
+  input {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid $input-container-border-color;
+    background-color: $input-container-input-bg;
+    padding: 0.625rem 70px 0.625rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    color: $input-container-input-color;
+    outline: none;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    &:focus {
+      border: 1px solid $input-container-input-focus-color;
+    }
+    
+    &:placeholder-shown ~ .invite-btn {
+      pointer-events: none;
+      background-color: $invite-btn-bg;
+      opacity: 0.5;
+    }
+  }
+  
+  .invite-btn {
+    position: absolute;
+    width: 65px;
+    right: 4px;
+    top: 4px;
+    bottom: 4px;
+    z-index: 10;
+    border-radius: 4px;
+    background-color: $invite-btn-bg;
+    color: #fff;
+    padding: 0.25rem;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    transition: 0.6s ease;
+    
+    &:hover {
+      right: 2px;
+      top: 2px;
+      bottom: 2px;
+      border-radius: 8px;
+      background-color: $invite-btn-hover-bg;
+    }
+  }
+}
